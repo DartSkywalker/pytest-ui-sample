@@ -1,0 +1,19 @@
+2021-03-13 23:08:45.059 | INFO     | pages.sign_up:get:26 - Loading registration page - https://eos.com/crop-monitoring/login
+2021-03-13 23:08:45.289 | INFO     | pages.sign_up:enter_first_name:30 - First Name - Alex
+2021-03-13 23:08:45.394 | INFO     | pages.sign_up:enter_last_name:34 - Last Name - Piskunov
+2021-03-13 23:08:45.576 | INFO     | pages.sign_up:enter_email:38 - User email - piskunovalxy+06@gmail.com
+2021-03-13 23:08:45.686 | INFO     | pages.sign_up:enter_password:42 - User password - *SECURITY ISSUE FOUND*
+2021-03-13 23:08:46.330 | INFO     | pages.sign_up:submit_policy:47 - Security policy submitted
+2021-03-13 23:08:47.223 | INFO     | pages.sign_up:click_sign_up_btn:55 - Sign Up button clicked
+2021-03-13 23:08:49.579 | INFO     | pages.sign_up:if_confirm_code_input_appears:59 - Confirmation code input is found
+2021-03-13 23:08:57.628 | INFO     | pages.sign_up:enter_registration_code:68 - Used confirmation code - 17-89
+2021-03-13 23:09:01.398 | INFO     | pages.sidebar:open_my_account_dd:23 - Clicked on "My Account dropdown"
+2021-03-13 23:09:02.351 | INFO     | pages.sidebar:if_correct_email_in_my_account:33 - Verified the correct email in user data
+2021-03-13 23:09:02.540 | INFO     | pages.sidebar:logout:28 - Signing out from the system
+2021-03-13 23:09:03.561 | INFO     | pages.sidebar:if_logout_successful:42 - Successfully logged out from the system
+2021-03-13 23:09:11.680 | INFO     | pages.sign_in:get:17 - Loading login page - https://eos.com/crop-monitoring/login/auth
+2021-03-13 23:09:11.916 | INFO     | pages.sign_in:enter_email:21 - User email - piskunovalxy+06@gmail.com
+2021-03-13 23:09:12.138 | INFO     | pages.sign_in:enter_password:25 - User password - do not even hope :)
+2021-03-13 23:09:24.844 | INFO     | pages.sign_in:click_sign_in_btn:33 - Sign In button clicked
+2021-03-13 23:09:33.245 | INFO     | pages.sidebar:open_my_account_dd:23 - Clicked on "My Account dropdown"
+2021-03-13 23:09:33.270 | INFO     | pages.sidebar:if_correct_email_in_my_account:33 - Verified the correct email in user data
