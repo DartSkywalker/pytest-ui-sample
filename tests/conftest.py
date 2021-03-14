@@ -19,8 +19,8 @@ def caplog(_caplog):
     logger.remove(handler_id)
 
 
-def pytest_namespace():
-    return {'reg_email': None}
+def pytest_configure():
+    pytest.reg_email = None
 
 
 @pytest.fixture

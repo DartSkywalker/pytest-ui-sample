@@ -51,7 +51,7 @@ def test_user_registration(browser, caplog):
 
 
 @pytest.mark.dependency(depends=['test_user_registration'])
-def test_user_auth(browser):
+def test_user_auth(browser, caplog):
     """
     The test case automated to verify the ability to login into a system with a newly registered user
     Chained with the registration test case 'test_user_registration'
@@ -62,6 +62,7 @@ def test_user_auth(browser):
     si = SignIn(browser)
     sb = Sidebar(browser)
 
+    # Enter user credentials
     si.get()
     si.enter_email(pytest.reg_email)
     si.enter_password(USER_PASSWORD)
