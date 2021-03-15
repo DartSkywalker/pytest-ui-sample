@@ -37,6 +37,7 @@ class EmailHelper:
     def get_registration_code(self):
         registration_codes = []
         attempts = 0
+        # Waiting 35 seconds for confirmation email
         while attempts < 7:
             # Connection created outside of __init__ because of needing to reload mailbox data after each attempt
             self.con = imaplib.IMAP4_SSL(self.imap_url)
@@ -44,14 +45,19 @@ class EmailHelper:
             self.con.select('Inbox')
             msgs = self.__get_emails(self.__search('FROM', SUPPORT_EMAIL, self.con))
             try:
+                # For the latest message from the sender
                 for msg in msgs[::-1]:
                     for sent in msg:
                         if type(sent) is tuple:
+                            # Split email content to allocate encoded part
                             content = str(sent[1], 'utf-8').split('Content-Transfer-Encoding: base64')
+                            # Decoding from base64 bytes to UTF-8
                             decoded = base64.urlsafe_b64decode(content[-1]).decode('UTF-8')
+                            # Extracting confirmation code using regular expression (stupidly simple pattern)
                             code = re.search(REG_CODE_REGEX, decoded).group(1)
                             registration_codes.append(code)
                             email_id = str(sent[0], 'utf-8').split(' ')[0]
+                            # Moving email from the sender to the trash
                             self.con.store(email_id, "+FLAGS", "\\Deleted")
                 if len(registration_codes) == 0:
                     self.con.logout()
@@ -61,4 +67,5 @@ class EmailHelper:
                 else:
                     return registration_codes[0]
             except IndexError:
+                # Waiting for the reload
                 time.sleep(self.waiting_time)
